@@ -1,0 +1,13 @@
+#include <iostream>  
+using namespace std;  
+int main ()  
+{  
+// declare variables  
+int r;  
+const double PI = 3.14;  
+double result;  
+cout << " Input the radius of a circle: " << endl;  
+cin >> r;  
+result = PI * r * r;  
+cout << " The area of a circle is: " << result;  
+}  

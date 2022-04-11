@@ -1,0 +1,19 @@
+/* C++ Templates - Example Program */
+
+#include<iostream.h>
+#include<string.h>
+#include<conio.h>
+template <typename T>
+inline T const& Max(T const& num1, T const& num2)
+{
+   return num1<num2?num2:num1;
+}
+void main()
+{
+   clrscr();
+   int a, b;
+   cout<<"Enter any two number: ";
+   cin>>a>>b;
+   cout<<"Max("<<a<<", "<<b<<"): "<<Max(a, b)<<"\n";
+   getch();
+}

@@ -1,0 +1,31 @@
+/* C++ Multithreading - Example Program */
+
+#include<iostream.h>
+#include<stdlib.h>
+#include<conio.h>
+#include<pthread.h>
+void *display_hello(void *thread_id)
+{
+   long t_id;
+   t_id=(long)thread_id;
+   cout<<"Thread ID, "<<t_id<<"\n";
+   pthread_exit(NULL);
+}
+void main()
+{
+   clrscr();
+   pthread_t threads[5];
+   int rc;
+   for(int i=0; i<5; i++)
+   {
+      cout<<"main(): creating the thread, "<<i<<"\n";
+      rc=pthread_create(&threads[i], NULL, display_hello, (void *)i);
+      if(rc)
+      {
+         cout<<"Error: unable to create thread, "<<rc<<"\n";
+         exit(-1);
+      }
+   }
+   pthread_exit(NULL);
+   getch();
+}

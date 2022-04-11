@@ -1,0 +1,12 @@
+/* C++ Preprocessor - Example Program */
+
+#include<iostream.h>
+#include<conio.h>
+#define concat(i, j) i##j
+void main()
+{
+   clrscr();
+   int ab=100;
+   cout<<concat(a, b);
+   getch();
+}

@@ -1,0 +1,14 @@
+/* C++ Dynamic Memory - Example Program */
+
+#include<iostream.h>
+#include<conio.h>
+void main()
+{
+   clrscr();
+   int *pval=NULL;     // pointer initialized with NULL
+   pval=new int;       // request memory for the variable
+   *pval=10;
+   cout<<"Value is "<<*pval;
+   delete pval;
+   getch();
+}

@@ -1,0 +1,15 @@
+* create a program to use the const keyword with different data types in the C++. */  
+#include <iostream>  
+#include <conio.h>  
+using namespace std;  
+int main ()  
+{  
+// declare variables  
+const int x = 20;  
+const int y = 25;  
+int z;  
+// add the value of x and y  
+z = x + y;  
+cout << " The sum of the x and y is: " << z << endl;  
+return 0;  
+}  

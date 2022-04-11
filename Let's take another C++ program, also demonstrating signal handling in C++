@@ -1,0 +1,28 @@
+/* C++ Signal Handling - Example Program */
+
+#include<iostream.h>
+#include<conio.h>
+#include<dos.h>
+#include<signal.h>
+#include<stdlib.h>
+void signalhandler(int sn)
+{
+   cout<<"Interrupt signal ("<<sn<<") received\n";
+   exit(sn);
+}
+void main()
+{
+   clrscr();
+   int a=0;
+   signal(SIGINT, signalhandler);
+   while(++a)
+   {
+      cout<<"Going for sleep...\n";
+      if(a==3)
+      {
+         raise(SIGINT);
+      }
+      sleep(1);
+   }
+   getch();
+}

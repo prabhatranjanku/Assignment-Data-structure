@@ -1,0 +1,68 @@
+/* C++ Templates - Example Program */
+      
+#include<iostream.h>
+#include<vector.h>
+#include<conio.h>
+#include<cstdlib.h>
+#include<stdexcept.h>
+#include<string.h>
+using namespace std;
+template <class T>
+class STACK
+{
+   private:
+      vector<T> elem;
+   public:
+      void push(T const&);
+      void pop();
+      T top() const;
+      bool empty() const
+      {
+         return elem.empty();
+      }
+};
+template <class T>
+void STACK<T>::push(T const& ele)
+{
+   elem.push_back(ele);
+}
+template <class T>
+void STACK<T>::pop()
+{
+   if(elem.empty())
+   {
+      throw out_of_range("STACK<>::pop():empty stack");
+   }
+   elem.pop_back();
+}
+template <class T>
+T STACK<T>::top() const
+{
+   if(elem.empty())
+   {
+      throw out_of_range("STACK<>::top():empty stack");
+   }
+   return elem.back();
+}
+void main()
+{
+   clrscr();
+   try
+   {
+      STACK<int> intstack;
+      STACK<string> stringstack
+      intstack.push(9);
+      cout<<instack.top()<<"\n";
+      stringstack.push("Hello");
+      cout<<stringstack.top()<<std::endl;
+      stringstack.pop();
+      stringstack.pop();
+   }
+   catch(exception const& e)
+   {
+      cerr<<"Exception: "<<e.what()<<"\n";
+      getch();
+      exit(1);
+   }
+   getch();
+}

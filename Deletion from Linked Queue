@@ -1,0 +1,117 @@
+/* C++ Queue - Example Program of C++ Queue
+ * This program demonstrates the concept of
+ * deletion from the linked queue in C++ */
+
+#include<iostream.h>
+#include<conio.h>
+#include<stdlib.h>
+
+struct node
+{
+   int info;
+   node *next;
+} *front, *newptr, *save, *ptr, *rear;
+
+node *create_new_node(int);
+void insert(node *);
+void delete_node_queue();
+void display(node *);
+
+void main()
+{
+   clrscr();
+   front = rear = NULL;
+   int inf;
+   int count=0;
+   char ch='y';
+
+   while(ch=='y' || ch=='Y')
+   {
+      cout<<"Enter information for the new node.. ";
+      cin>>inf;
+      newptr = create_new_node(inf);
+      if(newptr == NULL)
+      {
+         cout<<"\nSorry..!!..Cannot create new node..!!..Aborting..!!\n";
+         cout<<"Press any key to exit..\n";
+         getch();
+         exit(1);
+      }
+      insert(newptr);
+      cout<<"\nNow the Queue (Front...to...Rear) is:\n";
+      display(front);
+      cout<<"\nWant to enter more ? (y/n).. ";
+      cin>>ch;
+   }
+
+   clrscr();
+   do
+   {
+      cout<<"The Linked-Queue now is (Front...to...Rear) is:\n";
+      display(front);
+      if(count==0)
+      {
+         cout<<"\nWant to delete ? (y/n).. ";
+         count++;
+      }
+      else
+      {
+         cout<<"\nWant to delete more ? (y/n).. ";
+      }
+      cin>>ch;
+      if(ch=='y' || ch=='Y')
+      {
+         delete_node_queue();
+      }
+      cout<<"\n";
+   }while(ch=='y' || ch=='Y');
+
+   getch();
+}
+
+node *create_new_node(int x)
+{
+   ptr = new node;
+   ptr->info = x;
+   ptr->next = NULL;
+   return ptr;
+}
+
+void insert(node *n)
+{
+   if(front == NULL)
+   {
+      front = rear = n;
+   }
+   else
+   {
+      rear->next = n;
+      rear = n;
+   }
+}
+
+void delete_node_queue()
+{
+   if(front == NULL)
+   {
+      cout<<"\nOverflow..!!..Press a key to exit..\n";
+      getch();
+      exit(2);
+   }
+   else
+   {
+      ptr = front;
+      front = front->next;
+      delete ptr;
+   }
+}
+
+void display(node *n)
+{
+   while(n != NULL)
+   {
+      cout<<n->info<<" -> ";
+      n = n->next;
+   }
+   cout<<"!!\n";
+}

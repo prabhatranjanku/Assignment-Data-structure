@@ -1,0 +1,18 @@
+#include <iostream>  
+using namespace std;  
+int main ()  
+{  
+// declare integer variable  
+int x = 7, y = 10;  
+  
+const int *ptr = &x; // here x become constant variable  
+cout << " \n The initial value of ptr:" << *ptr;  
+cout << " \n The value of x: " <<x;  
+  
+// *ptr = 15; It is invalid; we cannot directly assign a value to the ptr variable  
+ptr = &y; //  here ptr variable pointing to the non const address 'y'  
+  
+cout << " \n The value of y: " <<y;  
+cout << " \n The value of ptr:" << *ptr;   
+return 0;  
+} 

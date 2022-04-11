@@ -1,0 +1,26 @@
+/* C++ Exception Handling - Example Program */
+
+#include<iostream.h>
+#include<conio.h>
+void main()
+{
+   clrscr();
+   int num;
+   cout<<"Enter a number: ";
+   cin>>num;
+   cout<<"Before try\n";
+   try
+   {
+      cout<<"Insice try\n";
+      if(num<0)
+      {
+         throw num;
+         cout<<"After throw (never executed)\n";
+      }
+   }catch(int num)
+   {
+      cout<<"Exception caught\n";
+   }
+   cout<<"After catch (will be executed)\n";
+   getch();
+}

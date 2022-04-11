@@ -1,0 +1,20 @@
+#include <iostream>  
+using namespace std;  
+  
+int main ()  
+{  
+    // declaration of the pointer variables  
+    int *pt = new int (65);  
+      
+    // use reinterpre_cast operator to type cast the pointer variables  
+    char *ch = reinterpret_cast <char *> (pt);  
+      
+    cout << " The value of pt: " << pt << endl;  
+    cout << " The value of ch: " << ch << endl;  
+      
+    // get value of the defined variable using pointer  
+    cout << " The value of *ptr: " << *pt << endl;  
+    cout << " The value of *ch: " << *ch << endl;  
+    return 0;  
+      
+}  

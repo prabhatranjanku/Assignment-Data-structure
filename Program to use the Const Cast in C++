@@ -1,0 +1,21 @@
+#include <iostream>  
+using namespace std;  
+  
+// define a function  
+int disp(int *pt)  
+{  
+    return (*pt * 10);  
+}  
+  
+int main ()  
+{  
+    // declare a const variable  
+    const int num = 50;  
+    const int *pt = # // get the address of num  
+      
+    // use const_cast to chnage the constness of the source pointer  
+    int *ptr = const_cast <int *> (pt);  
+    cout << " The value of ptr cast: " << disp(ptr);  
+    return 0;  
+       
+}  

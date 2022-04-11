@@ -1,0 +1,11 @@
+/* C++ Preprocessor - Example Program */
+
+#include<iostream.h>
+#include<conio.h>
+#define MKSTR(z) #z
+void main()
+{
+   clrscr();
+   cout<<MKSTR(HELLO C++)<<endl;
+   getch();
+}

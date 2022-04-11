@@ -1,0 +1,10 @@
+#include <iostream>  
+#include <conio.h>  
+using namespace std;  
+int main ()  
+{  
+// declare the value of the const  
+const int num = 25;  
+num = num + 10;  
+return 0;  
+}  

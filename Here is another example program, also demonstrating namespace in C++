@@ -1,0 +1,26 @@
+/* C++ Namespace - Example Program */
+
+#include<iostream.h>
+#include<conio.h>
+using namespace std;
+namespace first_namespace
+{
+   void fun()
+   {
+      cout<<"Inside first_namespace\n";
+   }
+}
+namespace second_namespace
+{
+   void fun()
+   {
+      cout<<"Inside second_namespace\n";
+   }
+}
+using namespace first_namespace;
+void main()
+{
+   clrscr();
+   fun();      // calls function from first namespace
+   getch();
+}

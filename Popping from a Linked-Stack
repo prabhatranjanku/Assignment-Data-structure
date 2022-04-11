@@ -1,0 +1,105 @@
+/* C++ Stack - Example Program of C++ Stack
+ * This C++ program demonstrates the concept
+ * of Popping from the linked-stack in C++ */
+
+#include<iostream.h>
+#include<stdlib.h>
+#include<conio.h>
+
+struct node
+{
+   int info;
+   node *next;
+} *top, *newptr, *save, *ptr;
+
+node *create_new_node(int);
+void push(node *);
+void pop();
+void display(node *);
+
+void main()
+{
+   clrscr();
+   int inf;
+   char ch='y';
+   top=NULL;
+   while(ch=='y' || ch=='Y')
+   {
+      cout<<"Enter information for the new node.. ";
+      cin>>inf;
+      newptr = create_new_node(inf);
+      if(newptr == NULL)
+      {
+         cout<<"\nSorry..!!..Cannot create new node..!!..Aborting..!!\n";
+         cout<<"Press any key to exit..\n";
+         getch();
+         exit(1);
+      }
+      push(newptr);
+      cout<<"\nWant to enter more ? (y/n).. ";
+      cin>>ch;
+   }
+   clrscr();
+   do
+   {
+      cout<<"The Stack now is: \n";
+      display(top);
+      cout<<"\nWant to pop an element ? (y/n).. ";
+      cin>>ch;
+      if(ch=='y' || ch=='Y')
+      {
+         pop();
+      }
+      cout<<"\n";
+   }while(ch=='y' || ch=='Y');
+
+   getch();
+}
+
+node *create_new_node(int x)
+{
+   ptr = new node;
+   ptr->info = x;
+   ptr->next = NULL;
+   return ptr;
+}
+
+void push(node *n)
+{
+   if(top==NULL)
+   {
+      top=n;
+   }
+   else
+   {
+      save = top;
+      top = n;
+      n->next = save;
+   }
+}
+
+void pop()
+{
+   if(top==NULL)
+   {
+      cout<<"\nUnderflow..!!..Press any key to exit..\n";
+      getch();
+      exit(2);
+   }
+   else
+   {
+      ptr = top;
+      top = top->next;
+      delete ptr;
+   }
+}
+
+void display(node *n)
+{
+   while(n != NULL)
+   {
+      cout<<n->info<<" -> ";
+      n = n->next;
+   }
+   cout<<"!!\n";
+}

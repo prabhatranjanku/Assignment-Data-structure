@@ -1,0 +1,19 @@
+ #include <iostream>  
+using namespace std;  
+int main ()  
+{  
+    // declare a variable  
+    double l;  
+    l = 2.5 * 3.5 * 4.5;  
+    int tot;  
+      
+    cout << " Before using the static cast:" << endl;  
+    cout << " The value of l = " << l << endl;  
+      
+    // use the static_cast to convert the data type  
+    tot = static_cast < int > (l);  
+    cout << " After using the static cast: " << endl;  
+    cout << " The value of tot = " << tot << endl;  
+      
+    return 0;                                                                                     
+}  
